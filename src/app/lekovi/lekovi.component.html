@@ -1,8 +1,14 @@
 <div class="row">
   <div class="col-md-5">
-    <app-lekovi-list></app-lekovi-list>
+    <app-lekovi-list
+    (lekWasSelected)="odabraniLek = $event"></app-lekovi-list>
   </div>
   <div class="col-md-7">
-    <app-lekovi-detail></app-lekovi-detail>
+    <app-lekovi-detail
+    *ngIf="odabraniLek; else noLekTekst"
+    [lek]="odabraniLek"></app-lekovi-detail>
+    <ng-template #noLekTekst>
+      <p>Molimo Vas odaberite lek!</p>
+    </ng-template>
   </div>
 </div>
