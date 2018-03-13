@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">Novi lek</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <a
+            (click)="showLekDetails()"
+            class="list-group-item clearfix"
+            *ngFor="let lek of lekovi">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ lek.naziv }}</h4>
+        <p class="list-group-item-text">{{ lek.opis }}</p>
+      </div>
+      <span class="pull-right">
+        <img
+                [src]="lek.slika"
+                alt="{{ lek.naziv }}"
+                class="img-responsive"
+                style="max-height: 50px;">
+      </span>
+    </a>
+  </div>
+</div>
+
