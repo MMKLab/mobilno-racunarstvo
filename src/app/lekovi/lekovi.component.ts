@@ -15,4 +15,8 @@ export class LekoviComponent implements OnInit {
     ngOnInit() {
     }
 
+    mojaMetoda(event: any) {
+        this.odabraniLek = event;
+        console.log(event);
+    }
 }
